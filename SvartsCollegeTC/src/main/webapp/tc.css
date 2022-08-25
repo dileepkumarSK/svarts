@@ -1,0 +1,104 @@
+@page {
+	size: auto;
+	margin: 0mm;
+}
+
+@media print {
+	.dontPrint {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+body {
+	margin: 2% 0 0 8%;
+}
+
+.p1om {
+	font-family: Geneva;
+	font-size: 11px;
+	font-style: italic;
+}
+
+td {
+	padding-left: 10px;
+}
+
+.p2ttd {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 15px;
+}
+
+.p3svarts {
+	font-family: Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 20px;
+}
+
+.p4aff {
+	font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 12px;
+}
+
+.p5tc {
+	font-family: Arial Narrow Bold;
+	font-size: 30px;
+}
+
+.headfile th p {
+	padding: 3px;
+	margin: 0;
+}
+
+.headfile {
+	margin-bottom: 0.5%;
+}
+
+.maintable td {
+	padding-bottom: 7px;
+	text-align: justify;
+}
+
+#admi-no {
+	padding-left: 60px;
+}
+
+#tc-no {
+	padding-left: 10px;
+}
+
+.last-row {
+	margin-top: 50px;
+}
+
+#tc-no, #admi-no {
+	padding-top: 5px;
+	padding-bottom: 20px;
+}
+
+#date, #sign {
+	padding-top: 30px;
+}
+
+#sno {
+	padding-left: 135px;
+}
+
+.certify {
+	margin-top: 8%;
+	border: 2px solid;
+	font-family: inherit;
+	font-size: 30px;
+	font-weight: bolder;
+	width: fit-content;
+	padding: 1% 4%;
+}
+
+.dontPrint {
+	color: green;
+	padding: 0.5% 4%;
+	font-size: 15px;
+}
+
+.printbutton {
+	margin: 2%;
+}

@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+.newstudentpage {
+	background-color: rgb(148, 230, 80);
+	padding: 5%;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+table tr td {
+	padding: 15px;
+}
+
+p {
+	padding: 10px;
+}
+
+.submit {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+.admn {
+	text-align: center;
+}

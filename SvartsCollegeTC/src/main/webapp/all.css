@@ -1,0 +1,78 @@
+@page {
+	size: auto;
+	margin: 0mm;
+}
+
+.index-admin {
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-weight: bolder;
+	color: black;
+	border: 5px solid green;
+	border-radius: 15px;
+	padding: 5%;
+	background-color: darkcyan;
+	margin: 20%;
+}
+
+.body {
+	background-color: aquamarine;
+}
+
+.index-admin h2 {
+	text-align: center;
+}
+
+.index-admin input {
+	margin-left: 8%;
+}
+
+#but {
+	padding-top: 15%;
+	text-align: center;
+}
+
+.index-table {
+	margin: 5% 20%;
+	text-align: center;
+}
+
+.admin-table {
+	margin: 5%;
+}
+
+.main-page {
+	margin: 0 19%;
+	padding: 5% 0;
+}
+
+.main-page button {
+	margin-right: 15%;
+	background-color: darkgoldenrod;
+	border-radius: 10px;
+}
+
+.list {
+	border: 2px solid buttonhighlight;
+}
+
+.list li {
+	list-style-type: none;
+}
+
+.list li a {
+	text-decoration: none;
+	color: white;
+}
+
+.list li a:hover {
+	text-decoration: none;
+	color: maroon;
+	margin: 5px;
+	padding: 2px;
+}
+
+.head {
+	color: orange;
+	font-size: 15px;
+	font-family: sans-serif;
+}

@@ -1,0 +1,129 @@
+body {
+	margin: 5% 0%;
+	margin-left: 15%;
+}
+
+@page {
+	size: auto;
+	margin: 0mm;
+}
+
+@media print {
+	.dontPrint {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.dontPrint {
+	color: green;
+	padding: 0.5% 4%;
+	font-size: 15px;
+}
+
+.printbutton {
+	margin: 2%;
+}
+
+.p1om {
+	font-family: Geneva;
+	font-size: 11px;
+	font-style: italic;
+}
+
+.content {
+	padding: 5px;
+}
+
+p {
+	margin: 0;
+	padding: 2% 0;
+}
+
+.p2ttd {
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-size: 17px;
+}
+
+.p3svarts {
+	font-family: Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 13px;
+}
+
+.p4aff {
+	font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 9px;
+}
+
+.p5tc {
+	font-family: Arial Narrow Bold;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.studycer {
+	margin-top: 15%;
+}
+
+.conduct {
+	font-size: 17px;
+}
+
+.certificate {
+	font-family: Helvetica, sans-serif;
+	padding-top: 15px;
+}
+
+#adno {
+	font-weight: bolder;
+	padding-left: 210px;
+	padding-bottom: 20px;
+}
+
+#adnos {
+	font-weight: bolder;
+	padding-left: 210px;
+	padding-bottom: 20px;
+}
+
+#signs {
+	font-weight: bolder;
+	padding-top: 60px;
+	padding-left: 280px;
+}
+
+#tcno {
+	font-weight: bolder;
+	padding-bottom: 20px;
+}
+
+#date {
+	font-weight: bolder;
+	padding-top: 60px;
+}
+
+#sign {
+	font-weight: bolder;
+	padding-top: 60px;
+	padding-left: 200px;
+}
+
+#content {
+	padding: 2% 0 0 0;
+	padding-left: 10px;
+	font-size: large;
+	font-family: 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+		sans-serif;
+}
+
+.paraforstudy {
+	white-space: normal;
+	width: 500px;
+	padding: 10px;
+}
+
+.dataofstd {
+	font-weight: bold;
+	font-style: inherit;
+	text-decoration: underline;
+}
