@@ -30,75 +30,41 @@ public class Admin extends HttpServlet {
 		int addno=Integer.parseInt(adno);
 		
 		String optipon=request.getParameter("print");
-		System.out.println(optipon);
+		
+		switch(optipon)
+		{
+		case "Print TC":optipon ="retrivingdata.jsp";break;
+		case "Print Study":optipon="forStudy.jsp";break;
+		case "Edit":optipon="Editstudnet.jsp";
+			
+		}
+	
 			
 			try {
 			       con=DBConnection.getCon();
 				PreparedStatement ps=con.prepareStatement("select * from Tc where ADMNO ="+addno+"");
+				PreparedStatement psfortcno=con.prepareStatement("select * from Tcno where Tcsvno =1");
 				ResultSet re=ps.executeQuery();
+				ResultSet refortcno=psfortcno.executeQuery();
+				
 				ServletContext sc=request.getServletContext();	
 				sc.setAttribute("print", re);
+				sc.setAttribute("Tcno", refortcno);
 				
-				if(optipon.equals("print TC")) 
-				{
-					if(re.next())
+				
+					if(re.next()&&refortcno.next())
 					{
-					RequestDispatcher rd=request.getRequestDispatcher("retrivingdata.jsp");
-					rd.include(request, response);
+						
+					RequestDispatcher rd=request.getRequestDispatcher(optipon);
+					rd.forward(request, response);
 					}
 					else
 					{
 					
 					RequestDispatcher rd=request.getRequestDispatcher("forTc.html");
 					rd.include(request, response);
+				}	
 					
-					
-					}
-				
-					
-				}
-				else if(optipon.equals("Print Study"))
-				{
-					
-					if(re.next())
-					{
-						
-						RequestDispatcher rd=request.getRequestDispatcher("forStudy.jsp");
-						rd.include(request, response);
-					}
-					else
-					{
-						
-						RequestDispatcher rd=request.getRequestDispatcher("forTc.html");
-						rd.include(request, response);
-						
-						
-					}
-					
-				}
-				
-				else 
-				{
-					
-					if(re.next())
-					{
-						
-						RequestDispatcher rd=request.getRequestDispatcher("Editstudnet.jsp");
-						rd.include(request, response);
-					}
-					else
-					{
-						
-						RequestDispatcher rd=request.getRequestDispatcher("forTc.html");
-						rd.include(request, response);
-						
-						
-					}
-					
-				}
-				
-				
-				
 			} 
 			catch (SQLException e) {
 				

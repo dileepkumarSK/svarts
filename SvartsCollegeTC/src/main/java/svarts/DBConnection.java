@@ -13,6 +13,7 @@ public class DBConnection
 	{
 		try
 		{
+			//String databaseURL = "jdbc:ucanaccess://e://Java//JavaSE//MsAccess//Contacts.accdb";
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "C##Dileep", "7036");
 		}

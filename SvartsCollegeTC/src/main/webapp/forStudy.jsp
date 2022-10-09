@@ -14,10 +14,10 @@
 </head>
 <body>
 
-	<%!ResultSet res=null; %>
-	<% res=(ResultSet)application.getAttribute("print");
- 
-%>
+	<%!ResultSet res = null;%>
+	<%
+	res = (ResultSet) application.getAttribute("print");
+	%>
 
 
 	<table>
@@ -35,37 +35,61 @@
 			<th><img alt="logo" src="logo.jpg" width="100" height="100"></th>
 		</thead>
 	</table>
-
-
 	<table class="conduct">
 		<tr>
-			<td colspan="1.5" id="tcno">T.C.No:</td>
-			<td colspan="1.5" id="adnos">Admission No: <%out.println("  "+res.getString(1));%>
+			<td colspan="1.5" id="tcno">T.C.No:
+			 <%
+			out.println("  " + res.getString(22));
+			%></td>
+			<td colspan="1.5" id="adnos">Admission No: <%
+			out.println("  " + res.getString(1));
+			%>
+			</td>
+		</tr>
+	</table>
+
+	<table class="conduct">
+
+
+		<tr>
+
+			<td class="title" width="130">Name of the Pupil</td>
+			<td class="dott">:</td>
+			<td class="content">
+				<%
+				out.println("  " + res.getString(3) + "  " + res.getString(2));
+				%>
 			</td>
 		</tr>
 
 		<tr>
-			<td class="title" colspan="1">Name of the Pupil</td>
-			<td class="content" colspan="2">: <% out.println("  "+res.getString(3)+"  "+res.getString(2));%></td>
+			<td class="title" >Class of Study</td>
+			<td class="dott" >:</td>
+			<td class="content" >
+				<%
+				out.println(
+						"  " + res.getString(18) + "  (" + res.getString(12) + "-" + res.getString(13) + "-" + res.getString(14) + ")");
+				%>
+			</td>
 		</tr>
 
 		<tr>
-			<td class="title" colspan="1">Class of Study</td>
-			<td class="content" colspan="2">: <%out.println("  "+res.getString(18)+" ("+res.getString(12)+"-"+res.getString(13)+"-"+res.getString(14)+")");%></td>
+			<td class="title">Period of Study</td>
+			<td class="dott">:</td>
+			<td class="content">
+				<%
+			out.println("  " + res.getString(19) + "-" + res.getString(17));
+			%>
+			</td>
 		</tr>
 
 		<tr>
-			<td class="title" colspan="1">Period of Study</td>
-
-			<td class="content" colspan="2">: <%out.println("  "+res.getString(19)+"-"+res.getString(17));
-			%></td>
+			<td class="title">Conduct</td>
+			<td class="dott">:</td>
+			<td class="content">STISFACTORY</td>
 		</tr>
-
-		<tr>
-			<td class="title" colspan="1">Conduct</td>
-
-			<td class="content" colspan="2">: STISFACTORY</td>
-		</tr>
+	</table>
+	<table class="conduct">
 
 		<tr>
 			<td colspan="1.5" id="date">Date:</td>
@@ -94,23 +118,24 @@
 
 		<table class="certificate">
 			<tr>
-				<td colspan="1.5" id="tcno">T.C.No:</td>
-				<td colspan="1.5" id="adno">Admission No: <% 
-			 out.println(res.getString(1));
+				<td colspan="1.5" id="tcno">T.C.No: <%
+			out.println("  " + res.getString(22));
 			%></td>
+				<td colspan="1.5" id="adno">Admission No: <%
+				out.println(res.getString(1));
+				%></td>
 			</tr>
 			<tr>
 				<td colspan="3" id="content"><p class="paraforstudy">
-						This is to certify that SRI <span class="dataofstd"> <% 
-			 out.println(res.getString(3)+"  "+res.getString(2));
-			%></span> is /was a student of college, who studied / is studying <span
-							class="dataofstd"> <% 
-			 out.println(res.getString(18)+" ("+res.getString(12)+"-"+res.getString(13)+"-"+res.getString(14)+")");
-			%>
-						</span>Course during the academic year <span class="dataofstd">
-							<% 
-			 out.println(res.getString(19)+"-"+res.getString(17));
-			%>
+						This is to certify that SRI <span class="dataofstd"> <%
+ out.println(res.getString(3) + "  " + res.getString(2));
+ %></span> is /was a student of college, who studied / is studying <span
+							class="dataofstd"> <%
+ out.println(res.getString(18) + " (" + res.getString(12) + "-" + res.getString(13) + "-" + res.getString(14) + ")");
+ %>
+						</span>Course during the academic year <span class="dataofstd"> <%
+ out.println(res.getString(19) + "-" + res.getString(17));
+ %>
 						</span>.
 					</p></td>
 			<tr>
@@ -121,6 +146,8 @@
 	</div>
 
 	<div class="printbutton">
-		<button onclick="window.print();" class="dontPrint">Print</button>
+		<button onclick="window.print();" class="dontPrint">Print</button><span class="buton"><a href="forTc.html">BACK </a></span> <span
+				class="buton"><a href="admin.html">MAIN </a></span>
+		</div>
 </body>
 </html>

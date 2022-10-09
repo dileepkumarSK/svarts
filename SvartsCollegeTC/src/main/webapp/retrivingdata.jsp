@@ -16,8 +16,9 @@
 <link rel='stylesheet' type='text/css' media='screen' href='tc.css'>
 </head>
 <body>
-	<%!ResultSet res=null; %>
+	<%!ResultSet res=null;ResultSet restcno=null;Calendar d=null; %>
 	<% res=(ResultSet)application.getAttribute("print");
+	restcno=(ResultSet)application.getAttribute("Tcno");
  
 %>
 
@@ -39,7 +40,17 @@
 
 	<table class="maintable">
 		<tr>
-			<td colspan="2" id="tc-no"><strong>T.C.No:</strong></td>
+			<td colspan="2" id="tc-no"><strong>T.C.No:
+			<% 
+			 d=new GregorianCalendar();
+			
+			if(res.getString(22)==null)
+				out.println(restcno.getString(2)+"/"+d.get(Calendar.YEAR));
+			else
+				out.println(res.getString(22));
+			%>
+			
+			</strong></td>
 
 			<td colspan="2" id="admi-no"><strong> Admission No: <% 
 			 out.println(res.getString(1));
@@ -47,17 +58,17 @@
 			</strong></td>
 		</tr>
 		<tr>
-			<td class="sno">1)</td>
-			<td class="row-content">Name of the Pupil</td>
-			<td>:</td>
-			<td class="row-output">
+			<td class="sno" width="5%" >1)</td>
+			<td width="40%" class="row-content" >Name of the Pupil</td>
+			<td valign="top">:</td>
+			<td width="55%" class="row-output" >
 				<% out.println(res.getString(3)+"  "+res.getString(2)); %>
 			</td>
 		</tr>
 		<tr>
 			<td class="sno">2)</td>
 			<td class="row-content">Father's Name</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(5)+" "+res.getString(4)); %>
 			</td>
@@ -66,7 +77,7 @@
 		<tr>
 			<td class="sno">3)</td>
 			<td class="row-content">Nationality/Religion and Caste</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(6)); %>
 			</td>
@@ -75,9 +86,11 @@
 		<tr>
 			<td class="sno">4)</td>
 			<td class="row-content">Date of Birth</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
-				<% out.println(res.getDate(8)); %>
+				<% 
+				
+					out.println(res.getString(8)); %>
 			</td>
 		</tr>
 
@@ -85,7 +98,7 @@
 			<td class="sno"></td>
 			<td class="row-content">in words as entered in the Admission
 				Register</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(9)); %>
 			</td>
@@ -96,7 +109,7 @@
 				at the time of leaving
 
 			</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(18)); %>
 			</td>
@@ -106,7 +119,7 @@
 		<tr>
 			<td class="sno"></td>
 			<td class="row-content">(b) Medium</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(10)); %>
 			</td>
@@ -114,7 +127,7 @@
 		<tr>
 			<td class="sno"></td>
 			<td class="row-content">(c) Subject Studied Part -I (B)</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(11)); %>
 			</td>
@@ -122,7 +135,7 @@
 		<tr>
 			<td class="sno"></td>
 			<td class="row-content">Part -II (Optionals) (i)</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(12)); %>
 			</td>
@@ -130,7 +143,7 @@
 		<tr>
 			<td class="sno"></td>
 			<td class="row-content" id="sno">(ii)</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(13)); %>
 			</td>
@@ -138,7 +151,7 @@
 		<tr>
 			<td class="sno"></td>
 			<td class="row-content" id="sno">(iii)</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
 				<% out.println(res.getString(14)); %>
 			</td>
@@ -149,15 +162,18 @@
 		<tr>
 			<td class="sno">6)</td>
 			<td class="row-content">Date of Admission</td>
-			<td>:</td>
-			<td class="row-output"></td>
+			<td  valign="top">:</td>
+			<td class="row-output">
+				<% 
+					out.println( res.getString(15)); %>
+			</td>
 		</tr>
 		<tr>
 			<td class="sno"></td>
 			<td class="row-content">(Year to be entered in words)</td>
-			<td>:</td>
+			<td  valign="top">:</td>
 			<td class="row-output">
-				<% out.println(res.getDate(15)); %>
+				<% out.println(res.getString(20)); %>
 			</td>
 		</tr>
 		<tr>
@@ -224,13 +240,20 @@
 				his/her study in the College
 			</td>
 			<td>:</td>
+
 			<td class="row-output">SATISFACTORY</td>
 		</tr>
 		<tr>
 			<td></td>
 			<td>
 				<div class="certify">
-					<% out.print("ORIGINAL"); %>
+					<% 
+					
+					if(res.getString(21).equals("0"))
+					out.print("ORIGINAL");
+					else
+						out.print("DUPLICATE");
+					%>
 				</div>
 
 			</td>
@@ -246,8 +269,17 @@
 		</tr>
 	</table>
 	<div class="printbutton">
-		<button onclick="window.print();" class="dontPrint">Print</button>
+		<form action="finding">
+			<input type="hidden" name="number"
+				value="<% out.println(res.getString(1)); %>">
+				
+			<button onclick="window.print();" class="dontPrint" type="submit">Print</button>
+			<span class="buton"><a href="forTc.html">BACK </a></span> <span
+				class="buton"><a href="admin.html">MAIN </a></span>
+
+		</form>
 	</div>
+
 
 
 </body>

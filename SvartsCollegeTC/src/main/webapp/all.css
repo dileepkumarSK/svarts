@@ -14,12 +14,20 @@
 	margin: 20%;
 }
 
+
 .body {
 	background-color: aquamarine;
 }
 
 .index-admin h2 {
 	text-align: center;
+}
+
+.admin{
+	margin-left:15%; 
+}
+.midcont{
+	margin-left:5%; 
 }
 
 .index-admin input {
@@ -76,3 +84,20 @@
 	font-size: 15px;
 	font-family: sans-serif;
 }
+
+
+.buton a{
+	text-decoration: none;
+	color: green;
+	padding: 0.5% 2%;
+	font-size: 15px;
+	
+}
+.buton{
+	font-weight:bolder;
+	border: 2px solid black;
+	margin: 2%;
+	padding: 0.3% 2%;
+	color: black;
+	background-color: #ffffff;
+	}

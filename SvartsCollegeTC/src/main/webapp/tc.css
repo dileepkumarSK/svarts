@@ -8,12 +8,23 @@
 		display: none;
 		visibility: hidden;
 	}
+	.buton{
+	display: none;
+		visibility: hidden;
+}
 }
 
 body {
 	margin: 2% 0 0 8%;
 }
-
+table {
+ 
+  table-layout: fixed;
+ 
+}
+.row-output{
+	width: auto;
+}
 .p1om {
 	font-family: Geneva;
 	font-size: 11px;
@@ -35,7 +46,7 @@ td {
 }
 
 .p4aff {
-	font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-family: sans-serif;
 	font-size: 12px;
 }
 
@@ -64,6 +75,7 @@ td {
 
 #tc-no {
 	padding-left: 10px;
+	
 }
 
 .last-row {
@@ -82,6 +94,8 @@ td {
 #sno {
 	padding-left: 135px;
 }
+
+
 
 .certify {
 	margin-top: 8%;
@@ -102,3 +116,17 @@ td {
 .printbutton {
 	margin: 2%;
 }
+.buton a{
+	text-decoration: none;
+	color: green;
+	padding: 0.5% 2%;
+	font-size: 15px;
+	
+}
+.buton{
+	font-weight:bolder;
+	border: 2px solid;
+	margin: 2%;
+	padding: 0.3% 2%;
+	color: green;
+	}

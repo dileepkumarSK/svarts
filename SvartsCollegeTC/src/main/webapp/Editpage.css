@@ -1,11 +1,16 @@
 @charset "ISO-8859-1";
 
 .newstudentpage {
-	background-color: rgb(148, 230, 80);
+	background-color: rgb(177, 206, 207);
 	padding: 5%;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
+
+table {
+ 
+  table-layout: fixed;
+}
 table tr td {
 	padding: 15px;
 }
@@ -25,19 +30,25 @@ h1 {
 .admn {
 	text-align: center;
 }
+.output{
+	padding: 2%;
+	color: blue;
+	font-weight:bolder;
+	size: 25px;
+	font-family: sans-serif;
+	border: 2px solid black; ;
+}
 
-.buton a{
-	text-decoration: none;
-	color: green;
-	padding: 0.5% 2%;
-	font-size: 15px;
+table tr td {
+	
+	border: 2px solid;
 	
 }
+
 .buton{
-	font-weight:bolder;
-	border: 2px solid black;
+	border: 2px solid;
 	margin: 2%;
 	padding: 0.3% 2%;
-	color: black;
-	background-color: #ffffff;
-	}
+	
+}
+
